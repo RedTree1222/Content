@@ -52,6 +52,12 @@ if cs:FindFirstChild("ContentCatMode") then
     end)
 end
 
+if cs:FindFirstChild("ContentFigure") then
+    cs.ContentFigure.MouseButton1Click:Connect(function()
+        loadstring(game:HttpGet("loadstring(game:HttpGet("https://raw.githubusercontent.com/RedTree1222/Content/refs/heads/main/ContentFigure.luau"))()"))()
+    end)
+end
+
 if cs:FindFirstChild("ContentSeek") then
     cs.ContentSeek.MouseButton1Click:Connect(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/RedTree1222/Content/refs/heads/main/ContentSeek.luau"))()
