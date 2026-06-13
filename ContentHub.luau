@@ -17,7 +17,6 @@ local fa = faa:WaitForChild("FrameA")
 local fb = fa:WaitForChild("FrameB")
 
 local cs = fb:WaitForChild("Content Scripts")
-local ds = fb:WaitForChild("Doors Scripts")
 
 hg.Enabled = true
 cn.Visible = false
@@ -53,15 +52,8 @@ if cs:FindFirstChild("ContentCatMode") then
     end)
 end
 
-local btn = ds:FindFirstChild("Abysall") or ds:FindFirstChild("Abysall Hub") or ds:FindFirstChild("Aby Hub")
-
-if btn then
-    btn.MouseButton1Click:Connect(function()
-        local ok, res = pcall(function()
-            return game:HttpGet("https://raw.githubusercontent.com/bocaj111004/Abysall/refs/heads/main/Loader.luau")
-        end)
-        if ok and res and #res > 0 then
-            loadstring(res)()
-        end
+if cs:FindFirstChild("ContentSeek") then
+    cs.ContentSeek.MouseButton1Click:Connect(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/RedTree1222/Content/refs/heads/main/ContentSeek.luau"))()
     end)
 end
